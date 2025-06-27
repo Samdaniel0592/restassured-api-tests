@@ -1,0 +1,31 @@
+name: GraphQL API Tests (Windows)
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Run GraphQL API tests on Windows
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Maven
+        uses: s4u/setup-maven-action@v1.9.0
+        with:
+          maven-version: '3.9.6'
+
+      - name: Build and Test
+        run: mvn test
