@@ -1,1 +1,2 @@
-com\api\test\App.class
+com\api\helpers\ApiClient.class
+com\api\helpers\PayloadBuilder.class
