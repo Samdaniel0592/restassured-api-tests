@@ -8,7 +8,7 @@ import static org.testng.Assert.*;
 
 public class FlightGraphQLTest {
 
-    @Test
+    @Test(groups = "regression")
     public void testFlightQueryBasic() {
         String baseURI = "https://countries.trevorblades.com/"; // Free public GraphQL API
 
